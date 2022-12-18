@@ -101,7 +101,8 @@ function downloadToFile(content, filename, contentType){
             
             value = value+1;
             globalValue= value;
-          
+            document.getElementById("previous").disabled=false;
+            document.getElementById("previousTop").disabled=false;
            
             document.getElementById("uil1").src = "puzzles/uil1-"+value+ ".png";
             document.getElementById("uil2").src = "puzzles/uil2-"+value+ ".png";
@@ -131,14 +132,35 @@ function downloadToFile(content, filename, contentType){
 
 </head>
 <body> 
-    <button onclick="return changeImage();">Next UIL Test</button>
-   <button onclick="return previousImage();">Previous UIL Test</button>
-    <table>
+    <button style="height: 30px; width: 100px" onclick="return changeImage();">Next Test</button>
+   <button disabled=true id="previousTop" style="height: 30px; width: 100px" onclick="return previousImage();">Previous Test</button>
+   <button style="height: 30px; width: 120px;background-color:blue;color:white" onclick="downloadToFile(
+
+'Time Taken:' + ((Date.now()-start)/1000) +
+    '1.' + document.getElementById('1').value + '   ' +
+
+'2.' + document.getElementById('2').value + '   ' +
+'3.' + document.getElementById('3').value + '   ' +
+'4.' + document.getElementById('4').value + '   ' +
+'5.' + document.getElementById('5').value + '   ' +
+'6.' + document.getElementById('6').value + '   ' +
+'7.' + document.getElementById('7').value + '   ' +
+'8.' + document.getElementById('8').value + '   ' +
+'9.' + document.getElementById('9').value + '   ' +
+'10.' + document.getElementById('10').value + '   ' +
+'11.' + document.getElementById('11').value + '   ' +
+'12.' + document.getElementById('12').value + '   ' +
+'13.' + document.getElementById('13').value + '   ' +
+'14.' + document.getElementById('14').value + '   ' +
+'15.' + document.getElementById('15').value + '   ' +
+'16.' + document.getElementById('16').value , 'uil-' + globalValue, 'text/plain')">Save Answers</button>
+
+    <table height="100%" width="100%">
         <tr>
-            <td>
-    <image id="uil1" src="puzzles/uil1-0.png"></image>
+            <td height="70%" width="70%">
+    <image  id="uil1" src="puzzles/uil1-0.png"></image>
 </td>
-<td>
+<td align="left">
     Answer 1<input id="1"></input>
     <br/>
     Answer 2<input id="2"></input>
@@ -181,7 +203,7 @@ function downloadToFile(content, filename, contentType){
     </td>
 </tr>
     <tr>
-            <td>
+            <td height="70%" width="70%">
     <image id="uil2" src="puzzles/uil2-0.png"></image>
 </td>
 <td>
@@ -227,7 +249,7 @@ function downloadToFile(content, filename, contentType){
     </td>
 </tr>
 <tr>
-            <td>
+           <td height="70%" width="70%">
     <image id="uil3" src="puzzles/uil3-0.png"></image>
 </td>
 <td>
@@ -273,7 +295,7 @@ function downloadToFile(content, filename, contentType){
     </td>
 </tr>
 <tr>
-            <td>
+            <td height="70%" width="70%">
     <image id="uil4" src="puzzles/uil4-0.png"></image>
 </td>
 <td>
@@ -281,15 +303,6 @@ function downloadToFile(content, filename, contentType){
     <br/>
     Answer 14<input id="14"></input>
    
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
     <br/>
     <br/>
     <br/>
@@ -319,10 +332,10 @@ function downloadToFile(content, filename, contentType){
     </td>
 </tr>
 </table>
-
-<button onclick="return changeImage();">Next UIL Test</button>
-<button onclick="return previousImage();">Previous UIL Test</button>
-<button style="background-color:blue;color:white" onclick="downloadToFile(
+<div style="margin-bottom: 50px;">
+<button  style="height: 30px; width: 100px" onclick="return changeImage();">Next Test</button>
+<button disabled=true id="previous" style="height: 30px; width: 100px" onclick="return previousImage();">Previous Test</button>
+<button style="height: 30px; width: 120px;background-color:blue;color:white" onclick="downloadToFile(
 
 'Time Taken:' + ((Date.now()-start)/1000) +
     '1.' + document.getElementById('1').value + '   ' +
@@ -342,6 +355,7 @@ function downloadToFile(content, filename, contentType){
 '14.' + document.getElementById('14').value + '   ' +
 '15.' + document.getElementById('15').value + '   ' +
 '16.' + document.getElementById('16').value , 'uil-' + globalValue, 'text/plain')">Save Answers</button>
+</div>
 
  </body>
 </html>   
