@@ -3,14 +3,14 @@
     <script type="text/javascript">
          var value = 0;
          var globalValue = value;
-         const start = Date.now();
+         start = Date.now();
       function download(text, name, type) {
 
   var a = document.getElementById("a");
   var file = new Blob([text], {type: type});
   a.href = URL.createObjectURL(file);
   a.download = name;
-  refreshAnswers();
+  //refreshAnswers();
 }
 
 function checkAnswers(){
@@ -22,9 +22,10 @@ function checkAnswers(){
 
 
 
-
+     //2016-17 Invitational
      ['A','B','C','C','C','A','C','B','A','B','C','A','B','A','C','D'],
-     ['A','C','B','B','B','D','A','B','C','B','C','B','D','A','C','C'],
+     //2016-17 Spring
+     ["b", "c", "c", "a", "a", "c", "c", "c","a", "c", "a", "b",  "b", "b", "b", "c"],
      ['A','C','B','B','B','D','A','B','C','B','C','B','D','A','C','C'],
      ['A','C','B','B','B','D','A','B','C','B','C','B','D','A','C','C'],
      ['A','C','B','B','B','D','A','B','C','B','C','B','D','A','C','C'],
@@ -41,15 +42,25 @@ function checkAnswers(){
      var correctCount = 0;
      var wrongCount = 0;
      for (let i = 1; i <= 16; i++) {
-        if(document.getElementById(i).value != null && uilAnswers[globalValue][i-1] == document.getElementById(i).value.trim().toUpperCase()){
+        if(document.getElementById(i).value != null && uilAnswers[globalValue][i-1].toUpperCase() == document.getElementById(i).value.trim().toUpperCase()){
             correct[correctCount]=i;
             correctCount++;
+            document.getElementById("ans"+i).style.color="green";
+            document.getElementById("ans"+i).innerHTML="Correct";
         }
         else{
            wrong[wrongCount]=i;
            wrongCount++;
+           document.getElementById("ans"+i).style.color="red";
+           document.getElementById("ans"+i).innerHTML="Wrong. Correct Answer is "+uilAnswers[globalValue][i-1];
         }
      }
+     document.getElementById("score").innerHTML="Score-"+correctCount+" out of 16";
+     if(correctCount>12){
+         document.getElementById("scoreImage").src="marketmove-mm.gif";
+     }
+     document.getElementById("scoreImage").style.display="block";
+     
      var retText = "correct:"+correctCount;
      retText+= "     wrong:"+wrongCount;
      retText+="    wrong ones:"+wrong;
@@ -62,6 +73,7 @@ function checkAnswers(){
 }
 
 function refreshAnswers(){
+    
     document.getElementById("1").value="";
     document.getElementById("2").value="";
     document.getElementById("3").value="";
@@ -82,6 +94,22 @@ function refreshAnswers(){
 }
 
 
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  Math.trunc((today-start)/1000/60)+" minutes "+ Math.trunc((((today-start)/1000)%60))+" seconds";
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+
 function downloadToFile(content, filename, contentType){
   content+="         " + checkAnswers(); 
   const a = document.createElement('a');
@@ -92,7 +120,7 @@ function downloadToFile(content, filename, contentType){
   a.click();
 
     URL.revokeObjectURL(a.href);
-    refreshAnswers();
+    //refreshAnswers();
 };
         
         function changeImage(){
@@ -103,7 +131,7 @@ function downloadToFile(content, filename, contentType){
             globalValue= value;
             document.getElementById("previous").disabled=false;
             document.getElementById("previousTop").disabled=false;
-           
+            start = Date.now();
             document.getElementById("uil1").src = "puzzles/uil1-"+value+ ".png";
             document.getElementById("uil2").src = "puzzles/uil2-"+value+ ".png";
             document.getElementById("uil3").src = "puzzles/uil3-"+value+ ".png";
@@ -112,6 +140,12 @@ function downloadToFile(content, filename, contentType){
             window.scrollTo(0, 0);
             document.getElementById("Test").innerHTML = " Test number "+ (globalValue+1)+ "  loaded";
             document.getElementById("TestBottom").innerHTML = " Test number "+ (globalValue+1)+ "  loaded";
+            document.getElementById("score").innerHTML="";
+            document.getElementById("scoreImage").style.display="none";
+    for(i=1;i<=16;i++){
+        document.getElementById("ans"+i).innerHTML="";
+
+    }
         }
         }
 
@@ -120,6 +154,11 @@ function downloadToFile(content, filename, contentType){
        if (confirm(text) == true) {
             value = value-1;
             globalValue= value;
+            if(globalValue == 0){
+                document.getElementById("previous").disabled=true;
+            document.getElementById("previousTop").disabled=true;
+            }
+            start = Date.now();
            
             document.getElementById("uil1").src = "puzzles/uil1-"+value+ ".png";
             document.getElementById("uil2").src = "puzzles/uil2-"+value+ ".png";
@@ -129,13 +168,25 @@ function downloadToFile(content, filename, contentType){
             window.scrollTo(0, 0);
             document.getElementById("Test").innerHTML = " Test number "+ (globalValue+1)+ "  loaded";
             document.getElementById("TestBottom").innerHTML = " Test number "+ (globalValue+1)+ "  loaded";
+            document.getElementById("score").innerHTML="";
+    for(i=1;i<=16;i++){
+        document.getElementById("ans"+i).innerHTML="";
+
+    }
         }
     }
     </script>
 
 
 </head>
-<body> 
+<body onload="startTime()"> 
+    <div style="text-align: center;">
+    <img src="giphy.gif" height="100px" width="100px"></img>
+</div>
+
+    <div style="text-align: center;color:gold;font-size: 20px;" id="txt"></div>
+    <br/>
+     <div style="text-align: center;color:green;font-size: 20px;" id="Test" color="green">First Test loaded</div>
     <button style="height: 30px; width: 100px" onclick="return changeImage();">Next Test</button>
    <button disabled=true id="previousTop" style="height: 30px; width: 100px" onclick="return previousImage();">Previous Test</button>
    <button style="height: 30px; width: 120px;background-color:blue;color:white" onclick="downloadToFile(
@@ -158,8 +209,12 @@ function downloadToFile(content, filename, contentType){
 '14.' + document.getElementById('14').value + '   ' +
 '15.' + document.getElementById('15').value + '   ' +
 '16.' + document.getElementById('16').value , 'uil-' + globalValue, 'text/plain')">Save Answers</button>
-
-   <div style="text-align: center;color:green" id="Test" color="green">First Test loaded</div>
+<div style="text-align:center;color:blue;align-content:center ;">
+  <div id="score" ></div>
+  <div align="center">
+    <img id="scoreImage" src="haha-baby.gif" style="text-align: center;width: 100px;height: 100px;display: none;"></img>
+</div>
+</div>
     <table height="100%" width="100%">
         <tr>
             <td height="70%" width="70%">
@@ -167,8 +222,10 @@ function downloadToFile(content, filename, contentType){
 </td>
 <td align="left">
     Answer 1<input id="1"></input>
+    <div id="ans1"></div>
     <br/>
     Answer 2<input id="2"></input>
+    <div id="ans2"></div>
    
     <br/>
     <br/>
@@ -199,10 +256,13 @@ function downloadToFile(content, filename, contentType){
     <br/>
     <br/>
     <br/>
+    
     Answer 3<input id="3"></input>
+    <div id="ans3"></div>
     <br/>
-    Answer 4<input id="4"></input>
 
+    Answer 4<input id="4"></input>
+    <div id="ans4"></div>
    
    
     </td>
@@ -213,8 +273,10 @@ function downloadToFile(content, filename, contentType){
 </td>
 <td>
     Answer 5<input id="5" ></input>
+     <div id="ans5"></div>
     <br/>
     Answer 6<input id="6"></input>
+     <div id="ans6"></div>
    
     <br/>
     <br/>
@@ -246,8 +308,10 @@ function downloadToFile(content, filename, contentType){
     <br/>
     <br/>
     Answer 7<input id="7"></input>
+     <div id="ans7"></div>
     <br/>
     Answer 8<input id="8"></input>
+     <div id="ans8"></div>
 
    
    
@@ -259,8 +323,10 @@ function downloadToFile(content, filename, contentType){
 </td>
 <td>
     Answer 9<input id="9"></input>
+     <div id="ans9"></div>
     <br/>
     Answer 10<input id="10"></input>
+     <div id="ans10"></div>
    
     <br/>
     <br/>
@@ -292,8 +358,10 @@ function downloadToFile(content, filename, contentType){
     <br/>
     <br/>
     Answer 11<input id="11"></input>
+     <div id="ans11"></div>
     <br/>
     Answer 12<input id="12"></input>
+     <div id="ans12"></div>
 
    
    
@@ -305,8 +373,10 @@ function downloadToFile(content, filename, contentType){
 </td>
 <td>
     Answer 13<input id="13"></input>
+     <div id="ans13"></div>
     <br/>
     Answer 14<input id="14"></input>
+     <div id="ans14"></div>
    
     <br/>
     <br/>
@@ -329,8 +399,10 @@ function downloadToFile(content, filename, contentType){
     <br/>
     <br/>
     Answer 15<input id="15"></input>
+     <div id="ans15"></div>
     <br/>
     Answer 16<input id="16"></input>
+     <div id="ans16"></div>
 
    
    
