@@ -60,6 +60,7 @@ function checkAnswers(){
          document.getElementById("scoreImage").src="marketmove-mm.gif";
      }
      document.getElementById("scoreImage").style.display="block";
+
      
      var retText = "correct:"+correctCount;
      retText+= "     wrong:"+wrongCount;
@@ -124,7 +125,7 @@ function downloadToFile(content, filename, contentType){
 };
         
         function changeImage(){
-            let text = "Go to next Test?\nEither Yes or No.";
+            let text = "Go to next Test?\nOK for Yes or Cancel for No.";
        if (confirm(text) == true) {
             
             value = value+1;
@@ -150,7 +151,7 @@ function downloadToFile(content, filename, contentType){
         }
 
         function previousImage(){
-            let text = "Go to previous Test?\nEither Yes or No.";
+            let text = "Go to previous Test?\nOK for Yes or Cancel for No.";
        if (confirm(text) == true) {
             value = value-1;
             globalValue= value;
