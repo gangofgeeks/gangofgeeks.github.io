@@ -110,6 +110,8 @@ function downloadToFile(content, filename, contentType){
             document.getElementById("uil4").src = "puzzles/uil4-"+value+ ".png";
             refreshAnswers();
             window.scrollTo(0, 0);
+            document.getElementById("Test").innerHTML = " Test number "+ (globalValue+1)+ "  loaded";
+            document.getElementById("TestBottom").innerHTML = " Test number "+ (globalValue+1)+ "  loaded";
         }
         }
 
@@ -125,6 +127,8 @@ function downloadToFile(content, filename, contentType){
             document.getElementById("uil4").src = "puzzles/uil4-"+value+ ".png";
             refreshAnswers();
             window.scrollTo(0, 0);
+            document.getElementById("Test").innerHTML = " Test number "+ (globalValue+1)+ "  loaded";
+            document.getElementById("TestBottom").innerHTML = " Test number "+ (globalValue+1)+ "  loaded";
         }
     }
     </script>
@@ -155,6 +159,7 @@ function downloadToFile(content, filename, contentType){
 '15.' + document.getElementById('15').value + '   ' +
 '16.' + document.getElementById('16').value , 'uil-' + globalValue, 'text/plain')">Save Answers</button>
 
+   <div style="text-align: center;color:green" id="Test" color="green">First Test loaded</div>
     <table height="100%" width="100%">
         <tr>
             <td height="70%" width="70%">
@@ -356,6 +361,6 @@ function downloadToFile(content, filename, contentType){
 '15.' + document.getElementById('15').value + '   ' +
 '16.' + document.getElementById('16').value , 'uil-' + globalValue, 'text/plain')">Save Answers</button>
 </div>
-
+<div style="text-align: center;color:green" id="TestBottom" color="green">First Test loaded</div>
  </body>
 </html>   
