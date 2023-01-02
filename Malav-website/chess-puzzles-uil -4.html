@@ -1,7 +1,7 @@
 <html>
 <head> 
     <script type="text/javascript">
-         var value = 10;
+         var value = 0;
          var globalValue = value;
          start = Date.now();
       function download(text, name, type) {
@@ -213,10 +213,10 @@ function downloadToFile(content, filename, contentType){
             document.getElementById("previous").disabled=false;
             document.getElementById("previousTop").disabled=false;
             start = Date.now();
-            document.getElementById("uil1").src = "puzzles/uil1-"+value+ ".png";
-            document.getElementById("uil2").src = "puzzles/uil2-"+value+ ".png";
-            document.getElementById("uil3").src = "puzzles/uil3-"+value+ ".png";
-            document.getElementById("uil4").src = "puzzles/uil4-"+value+ ".png";
+            document.getElementById("uil1").src = "puzzles2/uil1-"+value+ ".png";
+            document.getElementById("uil2").src = "puzzles2/uil2-"+value+ ".png";
+            document.getElementById("uil3").src = "puzzles2/uil3-"+value+ ".png";
+            document.getElementById("uil4").src = "puzzles2/uil4-"+value+ ".png";
             refreshAnswers();
             window.scrollTo(0, 0);
             document.getElementById("Test").innerHTML = " Test "+ getKeyByValue(globalValue)+ "  loaded";
@@ -242,10 +242,10 @@ function updateTest(){
             document.getElementById("previous").disabled=false;
             document.getElementById("previousTop").disabled=false;
             start = Date.now();
-            document.getElementById("uil1").src = "puzzles/uil1-"+value+ ".png";
-            document.getElementById("uil2").src = "puzzles/uil2-"+value+ ".png";
-            document.getElementById("uil3").src = "puzzles/uil3-"+value+ ".png";
-            document.getElementById("uil4").src = "puzzles/uil4-"+value+ ".png";
+            document.getElementById("uil1").src = "puzzles2/uil1-"+value+ ".png";
+            document.getElementById("uil2").src = "puzzles2/uil2-"+value+ ".png";
+            document.getElementById("uil3").src = "puzzles2/uil3-"+value+ ".png";
+            document.getElementById("uil4").src = "puzzles2/uil4-"+value+ ".png";
             refreshAnswers();
             window.scrollTo(0, 0);
             document.getElementById("Test").innerHTML = " Test "+ getKeyByValue(globalValue)+ "  loaded";
@@ -275,10 +275,10 @@ function updateTest(){
             }
             start = Date.now();
            
-            document.getElementById("uil1").src = "puzzles/uil1-"+value+ ".png";
-            document.getElementById("uil2").src = "puzzles/uil2-"+value+ ".png";
-            document.getElementById("uil3").src = "puzzles/uil3-"+value+ ".png";
-            document.getElementById("uil4").src = "puzzles/uil4-"+value+ ".png";
+            document.getElementById("uil1").src = "puzzles2/uil1-"+value+ ".png";
+            document.getElementById("uil2").src = "puzzles2/uil2-"+value+ ".png";
+            document.getElementById("uil3").src = "puzzles2/uil3-"+value+ ".png";
+            document.getElementById("uil4").src = "puzzles2/uil4-"+value+ ".png";
             refreshAnswers();
             window.scrollTo(0, 0);
             document.getElementById("Test").innerHTML = " Test "+ getKeyByValue(globalValue)+ "  loaded";
@@ -347,7 +347,7 @@ for (let [key, value] of map1) {
     <table height="100%" width="100%">
         <tr>
             <td height="70%" width="70%">
-    <image  id="uil1" src="puzzles/uil1-10.png"></image>
+    <image  id="uil1" src="puzzles2/uil1-0.png"></image>
 </td>
 <td align="left">
     Answer 1<input id="1"></input>
@@ -398,7 +398,7 @@ for (let [key, value] of map1) {
 </tr>
     <tr>
             <td height="70%" width="70%">
-    <image id="uil2" src="puzzles/uil2-10.png"></image>
+    <image id="uil2" src="puzzles2/uil2-0.png"></image>
 </td>
 <td>
     Answer 5<input id="5" ></input>
@@ -448,7 +448,7 @@ for (let [key, value] of map1) {
 </tr>
 <tr>
            <td height="70%" width="70%">
-    <image id="uil3" src="puzzles/uil3-10.png"></image>
+    <image id="uil3" src="puzzles2/uil3-0.png"></image>
 </td>
 <td>
     Answer 9<input id="9"></input>
@@ -498,7 +498,7 @@ for (let [key, value] of map1) {
 </tr>
 <tr>
             <td height="70%" width="70%">
-    <image id="uil4" src="puzzles/uil4-10.png"></image>
+    <image id="uil4" src="puzzles2/uil4-0.png"></image>
 </td>
 <td>
     Answer 13<input id="13"></input>

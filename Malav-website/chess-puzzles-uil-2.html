@@ -1,7 +1,7 @@
 <html>
 <head> 
     <script type="text/javascript">
-         var value = 10;
+         var value = 0;
          var globalValue = value;
          start = Date.now();
       function download(text, name, type) {
@@ -15,24 +15,21 @@
 
  map1 = new Map();
 
-map1.set('2016-17 Invitational', 0);
-map1.set('2016-17 Spring', 1);
-map1.set('2020-21 Invitational', 2);
-map1.set('2020-21 Fall/Winter', 3);
-map1.set('2020-21 Spring', 4);
-map1.set('2018-19 Fall', 5);
-map1.set('2018-19 Spring', 6);
-map1.set('2019-20 Invitational', 7);
-map1.set('2019-20 Fall', 8);
-map1.set('2019-20 Spring', 9);
-
-map1.set('2014-15 Fall', 10);
-map1.set('2014-15 Spring', 11);
-map1.set('2017-18 Invitational', 12);
-map1.set('2017-18 Spring', 13);
-map1.set('2015-16 Invitational', 14);
-map1.set('2015-16 Fall', 15);
-map1.set('2015-16 Spring', 16);
+map1.set('2015-16 Fall', 0);
+map1.set('2015-16 Invitaional', 1);
+map1.set('2015-16 Spring', 2);
+map1.set('2017-18 Fall', 3);
+map1.set('2017-18 Invitaional', 4);
+map1.set('2017-18 Spring', 5);
+map1.set('2018-19 Fall', 6);
+map1.set('2018-19 Invitaional', 7);
+map1.set('2018-19 Spring', 8);
+map1.set('2019-20 Fall', 9);
+map1.set('2019-20 Invitaional', 10);
+map1.set('2019-20 Spring', 11);
+map1.set('2020-21 Fall', 12);
+map1.set('2020-21 Invitaional', 13);
+map1.set('2020-21 Spring', 14);
  map1 = new Map([...map1].sort());
 
 
@@ -60,58 +57,37 @@ function checkAnswers(){
 
 
 
-     //2016-17 Invitational
-     ['A','B','C','C','C','A','C','B','A','B','C','A','B','A','C','D'],
-     //2016-17 Spring
-     ["b", "c", "c", "a", "a", "c", "c", "c","a", "c", "a", "b",  "b", "b", "b", "c"],
-     //20-21 Invita
-['B' ,'A','C','A','D','A','C','B','B','C','B', 'A','A','A','B','A'],
+     //2015-16_chess_puzzle_tests.pdf
+['c','a','b','b','b','c','a','c','a','b','d','a','b','d','d','a','c','b','a','b',],
+['b','a','c','a','b','c','a','b','d','c','a','c','b','b','d','a','a','a','c','a',],
+['A','C','B','B','C','C','D','B','D','B','C','D','B','A','D','D','C','C','A','C',],
 
-//Fall
-['A' ,'C','B','A','C','C','A','A','B','C','A', 'B','B','C','A','C'],
+//2017-18_chess_tests.pdf
+['C','A','B','B','C','C','B','A','C','C','B','D','A','B','B','C','B','C','C','C',],
+['','','','','','','','','','','','','','','','','','','','',],
+['a','b','c','a','c','a','c','c','b','a','d','c','c','a','b','c','c','b','a','d',],
+//chess_packet_1920.pdf
+['B','C','A','A','C','C','B','A','B','A','A','D','A','C','A','A','A','C','A','D',],
+['B','C','A','A','C','A','D','B','D','A','C','B','A','C','B','D','D','D','B','A',],
+['A','C','B','B','D','B','C','A','A','D','C','B','D','C','D','A','D','A','A','D',],
+//chess_packet_2021.pdf
+['B','A','C','B','C','C','B','B','B','A','D','B','B','D','A','B','D','A','B','D',],
+['A','B','C','C','A','A','A','C','A','A','C','B','D','B','A','A','D','B','C','A',],
+['A','C','B','A','C','B','C','A','A','C','C','A','C','B','D','B','B','A','D','C',],
+//chess_packet_2122.pdf
+['B','C','A','B','C','A','B','A','B','A','A','C','B','C','B','D','C','B','A','C',],
+['B','A','C','A','C','B','B','A','D','A','A','C','A','B','B','A','B','C','B','A',],
+['A','B','C','B','C','B','C','D','C','A','B','A','B','D','B','B','B','B','C','C',],
 
-//Spring
-['A' ,'B','C','B','C','B','A','A','B','A','B', 'B','A','A','C','A'],
-
-//18-19 Fall
-['B' ,'A','A','A','A','B','C','C','C','A','C', 'C','D','B','B','D'],
-
-//Spring
-['A' ,'C','B','B','B','D','A','B','C','B','C','B','D','A','C','C'],
-
-//19-20 Invit
-['A' ,'B','A','B','D','B','A','A','A','A','B', 'D','C','A','D','B'],
-
-//19-20 Fall
-['B' ,'A','A','A','B','C','C','A','C','B','D', 'C','A','B','D','A'],
-
-//19-20 Spring
-['A' ,'C','B','A','A','D','D','A','A','A','C', 'B','D','A','D','B'],
-
-//14-15 Fall
-['a','c','d','a','c','c','c','b','b','c','a','b','d','a','a','a'],
-
-//Spring
-['c','b','a','b','c','a','b','a','b','a','b','b','a','d','b','a'],
-
-//2017-18 Invitational
-['c','b','a','b','c','a','b','a','b','a','b','b','a','d','b','a'],
-
-//2017-18 Spring
-
-['a', 'c', 'b', 'a', 'b', 'd','c' ,'a','c','c','b','a','d','c','a','d'],
-
-['a', 'c', 'b', 'a', 'b', 'd','c' ,'a','c','c','b','a','d','c','a','d'],
-['a', 'c', 'b', 'a', 'b', 'd','c' ,'a','c','c','b','a','d','c','a','d'],
-['a', 'c', 'b', 'a', 'b', 'd','c' ,'a','c','c','b','a','d','c','a','d']
+ 
 
      ];
      var correct=[];
      var wrong=[];
      var correctCount = 0;
      var wrongCount = 0;
-     for (let i = 1; i <= 16; i++) {
-        if(document.getElementById(i).value != null && uilAnswers[globalValue][i-1].toUpperCase() == document.getElementById(i).value.trim().toUpperCase()){
+     for (let i = 1; i <= 20; i++) {
+        if(document.getElementById(i).value != null && uilAnswers[globalValue][i-1].toUpperCase().trim() == document.getElementById(i).value.trim().toUpperCase()){
             correct[correctCount]=i;
             correctCount++;
             document.getElementById("ans"+i).style.color="green";
@@ -124,7 +100,7 @@ function checkAnswers(){
            document.getElementById("ans"+i).innerHTML="Wrong. Correct Answer is "+uilAnswers[globalValue][i-1];
         }
      }
-     document.getElementById("score").innerHTML="Score-"+correctCount+" out of 16";
+     document.getElementById("score").innerHTML="Score-"+correctCount+" out of 20";
      if(correctCount<=1){
                 document.getElementById("scoreImage").src="giphy-1.gif";
      }
@@ -168,6 +144,10 @@ function refreshAnswers(){
     document.getElementById("14").value="";
     document.getElementById("15").value="";
     document.getElementById("16").value="";
+    document.getElementById("17").value="";
+    document.getElementById("18").value="";
+    document.getElementById("19").value="";
+    document.getElementById("20").value="";
     
 }
 
@@ -213,17 +193,18 @@ function downloadToFile(content, filename, contentType){
             document.getElementById("previous").disabled=false;
             document.getElementById("previousTop").disabled=false;
             start = Date.now();
-            document.getElementById("uil1").src = "puzzles/uil1-"+value+ ".png";
-            document.getElementById("uil2").src = "puzzles/uil2-"+value+ ".png";
-            document.getElementById("uil3").src = "puzzles/uil3-"+value+ ".png";
-            document.getElementById("uil4").src = "puzzles/uil4-"+value+ ".png";
+            document.getElementById("uil1").src = "puzzles2/uil1-"+value+ ".png";
+            document.getElementById("uil2").src = "puzzles2/uil2-"+value+ ".png";
+            document.getElementById("uil3").src = "puzzles2/uil3-"+value+ ".png";
+            document.getElementById("uil4").src = "puzzles2/uil4-"+value+ ".png";
+            document.getElementById("uil5").src = "puzzles2/uil5-"+value+ ".png";
             refreshAnswers();
             window.scrollTo(0, 0);
             document.getElementById("Test").innerHTML = " Test "+ getKeyByValue(globalValue)+ "  loaded";
             document.getElementById("TestBottom").innerHTML = " Test "+ getKeyByValue(globalValue+1)+ "  loaded";
             document.getElementById("score").innerHTML="";
             document.getElementById("scoreImage").style.display="none";
-    for(i=1;i<=16;i++){
+    for(i=1;i<=20;i++){
         document.getElementById("ans"+i).innerHTML="";
 
     }
@@ -242,17 +223,18 @@ function updateTest(){
             document.getElementById("previous").disabled=false;
             document.getElementById("previousTop").disabled=false;
             start = Date.now();
-            document.getElementById("uil1").src = "puzzles/uil1-"+value+ ".png";
-            document.getElementById("uil2").src = "puzzles/uil2-"+value+ ".png";
-            document.getElementById("uil3").src = "puzzles/uil3-"+value+ ".png";
-            document.getElementById("uil4").src = "puzzles/uil4-"+value+ ".png";
+            document.getElementById("uil1").src = "puzzles2/uil1-"+value+ ".png";
+            document.getElementById("uil2").src = "puzzles2/uil2-"+value+ ".png";
+            document.getElementById("uil3").src = "puzzles2/uil3-"+value+ ".png";
+            document.getElementById("uil4").src = "puzzles2/uil4-"+value+ ".png";
+            document.getElementById("uil5").src = "puzzles2/uil5-"+value+ ".png";
             refreshAnswers();
             window.scrollTo(0, 0);
             document.getElementById("Test").innerHTML = " Test "+ getKeyByValue(globalValue)+ "  loaded";
             document.getElementById("TestBottom").innerHTML = " Test "+ getKeyByValue(globalValue)+ "  loaded";
             document.getElementById("score").innerHTML="";
             document.getElementById("scoreImage").style.display="none";
-    for(i=1;i<=16;i++){
+    for(i=1;i<=20;i++){
         document.getElementById("ans"+i).innerHTML="";
 
     }
@@ -275,16 +257,17 @@ function updateTest(){
             }
             start = Date.now();
            
-            document.getElementById("uil1").src = "puzzles/uil1-"+value+ ".png";
-            document.getElementById("uil2").src = "puzzles/uil2-"+value+ ".png";
-            document.getElementById("uil3").src = "puzzles/uil3-"+value+ ".png";
-            document.getElementById("uil4").src = "puzzles/uil4-"+value+ ".png";
+            document.getElementById("uil1").src = "puzzles2/uil1-"+value+ ".png";
+            document.getElementById("uil2").src = "puzzles2/uil2-"+value+ ".png";
+            document.getElementById("uil3").src = "puzzles2/uil3-"+value+ ".png";
+            document.getElementById("uil4").src = "puzzles2/uil4-"+value+ ".png";
+            document.getElementById("uil5").src = "puzzles2/uil5-"+value+ ".png";
             refreshAnswers();
             window.scrollTo(0, 0);
             document.getElementById("Test").innerHTML = " Test "+ getKeyByValue(globalValue)+ "  loaded";
             document.getElementById("TestBottom").innerHTML = " Test "+ getKeyByValue(globalValue)+ "  loaded";
             document.getElementById("score").innerHTML="";
-    for(i=1;i<=16;i++){
+    for(i=1;i<=20;i++){
         document.getElementById("ans"+i).innerHTML="";
 
     }
@@ -336,7 +319,11 @@ for (let [key, value] of map1) {
 '13.' + document.getElementById('13').value + '   ' +
 '14.' + document.getElementById('14').value + '   ' +
 '15.' + document.getElementById('15').value + '   ' +
-'16.' + document.getElementById('16').value , 'uil-' + globalValue, 'text/plain')">Save Answers</button>
+'16.' + document.getElementById('16').value + '   ' +
+'17.' + document.getElementById('17').value + '   ' +
+'18.' + document.getElementById('18').value + '   ' +
+'19.' + document.getElementById('19').value + '   ' +
+'20.' + document.getElementById('20').value , 'uilFour-' + globalValue, 'text/plain')">Save Answers</button>
 </div>
 <div style="text-align:center;color:blue;align-content:center ;">
   <div id="score" ></div>
@@ -347,7 +334,7 @@ for (let [key, value] of map1) {
     <table height="100%" width="100%">
         <tr>
             <td height="70%" width="70%">
-    <image  id="uil1" src="puzzles/uil1-10.png"></image>
+    <image  id="uil1" src="puzzles2/uil1-0.png"></image>
 </td>
 <td align="left">
     Answer 1<input id="1"></input>
@@ -398,7 +385,7 @@ for (let [key, value] of map1) {
 </tr>
     <tr>
             <td height="70%" width="70%">
-    <image id="uil2" src="puzzles/uil2-10.png"></image>
+    <image id="uil2" src="puzzles2/uil2-0.png"></image>
 </td>
 <td>
     Answer 5<input id="5" ></input>
@@ -448,7 +435,7 @@ for (let [key, value] of map1) {
 </tr>
 <tr>
            <td height="70%" width="70%">
-    <image id="uil3" src="puzzles/uil3-10.png"></image>
+    <image id="uil3" src="puzzles2/uil3-0.png"></image>
 </td>
 <td>
     Answer 9<input id="9"></input>
@@ -498,7 +485,7 @@ for (let [key, value] of map1) {
 </tr>
 <tr>
             <td height="70%" width="70%">
-    <image id="uil4" src="puzzles/uil4-10.png"></image>
+    <image id="uil4" src="puzzles2/uil4-0.png"></image>
 </td>
 <td>
     Answer 13<input id="13"></input>
@@ -537,6 +524,53 @@ for (let [key, value] of map1) {
    
     </td>
 </tr>
+
+<tr>
+            <td height="70%" width="70%">
+    <image id="uil5" src="puzzles2/uil5-0.png"></image>
+</td>
+<td>
+    Answer 17<input id="17"></input>
+     <div id="ans17"></div>
+    <br/>
+    Answer 18<input id="18"></input>
+     <div id="ans18"></div>
+   
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    Answer 19<input id="19"></input>
+     <div id="ans19"></div>
+    <br/>
+    Answer 20<input id="20"></input>
+     <div id="ans20"></div>
+
+   
+   
+    </td>
+</tr>
+
+
+
+
+
 </table>
 <div style="margin-right: 250px;text-align: right;">
 <button  style="height: 30px; width: 100px;display:none;" onclick="return changeImage();">Next Test</button>
@@ -560,7 +594,11 @@ for (let [key, value] of map1) {
 '13.' + document.getElementById('13').value + '   ' +
 '14.' + document.getElementById('14').value + '   ' +
 '15.' + document.getElementById('15').value + '   ' +
-'16.' + document.getElementById('16').value , 'uil-' + globalValue, 'text/plain')">Save Answers</button>
+'16.' + document.getElementById('16').value + '   ' +
+'17.' + document.getElementById('17').value + '   ' +
+'18.' + document.getElementById('18').value + '   ' +
+'19.' + document.getElementById('19').value + '   ' +
+'20.' + document.getElementById('20').value , 'uilFour-' + globalValue, 'text/plain')">Save Answers</button>
 </div>
 <div style="text-align: center;color:green" id="TestBottom" color="green">First Test loaded</div>
  </body>
